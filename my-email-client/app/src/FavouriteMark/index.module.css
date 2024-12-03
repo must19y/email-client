@@ -1,0 +1,29 @@
+.filterBar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filterButton {
+    background-color: #E1E4EA; /* Light gray background */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 20px; /* Add padding */
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Darker text color */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: background-color 0.2s, transform 0.2s; /* Smooth transitions */
+  }
+  
+  .filterButton:hover {
+    background-color: #d6dae4; /* Slightly darker gray on hover */
+  }
+  
+  .filterButton:active {
+    transform: scale(0.98); /* Slight "pressed" effect */
+  }
+  
+  .filterButton:focus {
+    outline: 2px solid #6c7ae0; /* Accessible focus outline */
+  }
+  

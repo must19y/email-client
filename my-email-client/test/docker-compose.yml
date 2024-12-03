@@ -1,0 +1,32 @@
+version: "3.0"
+
+
+services:  
+  application:
+        # name the container to find it later
+        container_name: blogpractice-application
+        image: node:lts-alpine
+        # configure working directory for installing next.js
+        # working_dir: /home/node/code/
+        # configure working directory for running the application
+        working_dir: /home/node/code/blogpractice-application
+        # configure ports, map the container port to the host’s. the application listens to port 3000 (container) and is available at localhost:3000 (host) 
+        ports:
+            - "3000:3000"
+        # sync files between host and container
+        volumes:
+            # map current directory to the working directory
+            - ./code:/home/node/code
+        # this container depends on a running backend container
+        environment:
+            # set node environment to development
+            # - NODE_ENV=development
+            # configure hot reloading
+            - HOST=0.0.0.0
+            - CHOKIDAR_USEPOLLING=true
+            - CHOKIDAR_INTERVAL=100
+        # keep container alive for installing next.js
+        tty: true
+        command: "npm run dev"
+        
+

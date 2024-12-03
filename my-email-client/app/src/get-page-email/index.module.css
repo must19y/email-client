@@ -1,0 +1,126 @@
+/* Center the container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content slightly below the top */
+  position: relative;
+  height: auto; /* Allow dynamic height based on content */
+  width: 80%; /* Restrict width for centering */
+  margin: 10% 50% auto; /* Center with space from the top */
+  background-color: #f4f5f9;
+  border-radius: 10px; /* Add subtle rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for elevation */
+  padding: 20px; /* Ensure padding around the content */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Slide the container left when an email is selected */
+.container.shiftLeft {
+  transform: translateX(-40%);
+}
+
+/* Email list styling */
+.emailList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%; /* Ensure email list takes full width of the container */
+}
+
+/* Individual email box styling */
+.email {
+  background-color: #ffffff;
+  border: 1px solid #cfd2dc;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 12px;
+}
+
+.email:hover {
+  background-color: #e0e0e0;
+}
+
+.email header {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #636363;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.email footer {
+  margin-top: 5px;
+  text-align: right;
+  font-size: 10px;
+  color: #636363;
+}
+
+/* Load More Button */
+.loadMore {
+  background-color: #cfd2dc;
+  color: #636363;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.loadMore:hover {
+  background-color: #b0b3bc;
+}
+
+/* Email detail view */
+.emailDetail {
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #cfd2dc;
+  border-radius: 5px;
+  overflow-y: auto;
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1); /* Shadow to separate detail view */
+}
+
+.emailDetail header {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
+/* Filter Bar */
+.filterBar {
+  display: flex;
+  justify-content: flex-start; /* Align to the left */
+  padding: 10px;
+  background-color: #f4f5f9;
+  width: 100%;
+}
+
+/* Filter Button */
+.filterButton {
+  background-color: #636363;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.filterButton:hover {
+  background-color: #494949;
+}
+
+/* Read emails */
+.email.read {
+  background-color: #e0f7fa; /* Light blue for read emails */
+  color: #636363;
+}
+

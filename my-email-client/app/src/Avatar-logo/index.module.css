@@ -1,0 +1,16 @@
+/* Avatar Styling */
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Size of the avatar */
+    height: 40px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%; /* Circular shape */
+    text-transform: uppercase;
+    margin-right: 10px; /* Space between avatar and content */
+  }
+  

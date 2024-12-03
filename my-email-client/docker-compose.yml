@@ -1,0 +1,30 @@
+version: "3.0"
+
+services:
+  vite-app:
+    container_name: vite-typescript-app
+    image: node:lts-alpine
+    working_dir: /app
+    ports:
+      - "5173:5173" # Map Vite's dev server port to the host
+    volumes:
+      - ./app:/app # Map project directory
+       # Explicitly share node_modules
+    environment:
+      - NODE_ENV=development # Explicitly set environment
+      - HOST=0.0.0.0 # Make the dev server accessible
+      - CHOKIDAR_USEPOLLING=true # Enable polling for hot-reloading
+    tty: true # Keep container running for interactive development
+    stdin_open: true
+    command: >
+     sh -c "chown -R node:node /app &&
+     if [ ! -f /app/package.json ]; then
+     echo '{\"name\":\"vite-typescript-app\",\"version\":\"1.0.0\",\"description\":\"\",\"main\":\"index.js\",\"scripts\":{\"dev\":\"vite\",\"build\":\"vite build\",\"preview\":\"vite preview\"},\"dependencies\":{},\"devDependencies\":{}}' > /app/package.json;
+     fi &&
+     npm install &&
+     npm run dev"
+      
+
+
+
+
